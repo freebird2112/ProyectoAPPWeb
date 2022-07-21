@@ -1,7 +1,7 @@
 body {
-    background: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+    background: linear-gradient(141deg, #38c88a 0%, #2254b2 51%, #0e013e 75%);
     font-family: Noto Sans, Helvetica, sans-serif;
-    color: #666;
+    color: rgb(67, 67, 67);
     letter-spacing: 1px;
     padding: 10px;
     min-height: 100vh;
@@ -45,15 +45,18 @@ body {
   }
   
   h1 {
-    text-shadow: 0 0 20px #fefcc9, 10px -10px 30px #feec85,
-      -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606,
-      0 -80px 70px #973716, 10px -90px 80px #451b0e;
+    text-shadow: 0 0 20px #5e5e5e, 10px -10px 30px #feec85,
+      -20px -20px 40px #68067e, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606,
+      0 -80px 70px #973716, 10px -90px 80px #da4011;
     display: inline-block;
   }
   
+  .column {
+    width: 50%
+  }
   h1,
   h2 {
-    color: #666;
+    color: rgb(218, 218, 218);
   }
   
   .main-content {
