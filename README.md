@@ -1,5 +1,5 @@
 # ProyectoAPPWeb
-NOTA: Como instalar appster:
+NOTA: Como ejecutar appster:
 
 yarn add node-sass@4.14.1
 
