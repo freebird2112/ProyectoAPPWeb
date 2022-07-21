@@ -1,9 +1,10 @@
 import React from 'react';
 import LocalForm from './LocalForm';
 
-const AddLocal = () => {
+const AddLocal = ({ history, locals, setLocals }) => {
   const handleOnSubmit = (local) => {
-    console.log(local);
+    setLocals([local, ...locals]);
+    history.push('/');
   };
 
   return (

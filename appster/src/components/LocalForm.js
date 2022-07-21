@@ -3,12 +3,15 @@ import { Form, Button } from 'react-bootstrap';
 import { v4 as uuidv4 } from 'uuid';
 
 const LocalForm = (props) => {
-  const [local, setLocal] = useState({
+  const [local, setLocal] = useState(() => {
+    return {
     localname: props.local ? props.local.localname : '',
     direccion: props.local ? props.local.direccion : '',
     hora_apertura: props.local ? props.local.hora_apertura : '',
     precio_entrada: props.local ? props.local.precio_entrada : '',
-    aforo: props.local ? props.local.aforo : ''
+    aforo: props.local ? props.local.aforo : '',
+    //capacidad_disponible: props.local ? props.local.capacidad_disponible: ''
+    };
   });
 
   const [errorMsg, setErrorMsg] = useState('');
@@ -31,7 +34,8 @@ const LocalForm = (props) => {
         direccion, 
         hora_apertura, 
         precio_entrada,
-        aforo
+        aforo,
+        //capacidad_disponible: aforo()
       };
       props.handleOnSubmit(local);
     } else {
@@ -47,7 +51,7 @@ const LocalForm = (props) => {
         if (value === '' || parseInt(value) === +value) {
           setLocal((prevState) => ({
             ...prevState,
-            [name]: value
+            [name]: value 
           }));
         }
         break;
@@ -72,7 +76,7 @@ const LocalForm = (props) => {
       {errorMsg && <p className="errorMsg">{errorMsg}</p>}
       <Form onSubmit={handleOnSubmit}>
         <Form.Group controlId="name">
-          <Form.Label>local Name</Form.Label>
+          <Form.Label>Nombre</Form.Label>
           <Form.Control
             className="input-control"
             type="text"
@@ -83,7 +87,7 @@ const LocalForm = (props) => {
           />
         </Form.Group>
         <Form.Group controlId="direccion">
-          <Form.Label>local Direccion</Form.Label>
+          <Form.Label>Direccion</Form.Label>
           <Form.Control
             className="input-control"
             type="text"
@@ -127,7 +131,7 @@ const LocalForm = (props) => {
           />
         </Form.Group>
         <Button variant="primary" type="submit" className="submit-btn">
-          Someter
+          Registrar
         </Button>
       </Form>
     </div>
